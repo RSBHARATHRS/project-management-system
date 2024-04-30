@@ -29,9 +29,9 @@ export default function NewProject({ handleAddProject }) {
                 </li>
             </menu>
             <div>
-                <Input ref={title} label="Title" />
+                <Input type="text" ref={title} label="Title" />
                 <Input ref={desc} label="Description" isTextArea={true} />
-                <Input ref={dueDate} label="Due date" />
+                <Input type="date" ref={dueDate} label="Due date" />
             </div>
         </div>
     )

@@ -20,13 +20,13 @@ function App() {
 
   function handleAddProject(newProject) {
     setProjectsState((preState) => {
-      return { ...preState, selectedProject: undefined, projects: [...preState.projects, newProject] };
+      return { ...preState, selectedProject: newProject.id, projects: [...preState.projects, newProject] };
     });
   }
 
   return (
     <main className="h-screen my-8 flex gap-8">
-      <ProjectsSidebar onStartAddingProject={handleStartAddingProject} />
+      <ProjectsSidebar onStartAddingProject={handleStartAddingProject} projects={projectsState.projects}/>
       {projectsState.selectedProject === null ? <NewProject handleAddProject={handleAddProject}/> : <NoProjectSelected onStartAddingProject={handleStartAddingProject} />}
     </main>
   );
